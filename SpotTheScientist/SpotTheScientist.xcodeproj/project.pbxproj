@@ -14,6 +14,7 @@
 		049EB16125FFEDB20081B02C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049EB15F25FFEDB20081B02C /* LaunchScreen.storyboard */; };
 		049EB16A25FFEEB70081B02C /* scientists.json in Resources */ = {isa = PBXBuildFile; fileRef = 049EB16925FFEEB70081B02C /* scientists.json */; };
 		049EB17A25FFFE830081B02C /* Scientist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EB17925FFFE830081B02C /* Scientist.swift */; };
+		049EB1832600062C0081B02C /* SCNNode+Aritmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049EB1822600062C0081B02C /* SCNNode+Aritmetic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		049EB16225FFEDB20081B02C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		049EB16925FFEEB70081B02C /* scientists.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = scientists.json; sourceTree = "<group>"; };
 		049EB17925FFFE830081B02C /* Scientist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scientist.swift; sourceTree = "<group>"; };
+		049EB1822600062C0081B02C /* SCNNode+Aritmetic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Aritmetic.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				049EB17425FFF10C0081B02C /* Models */,
 				049EB17225FFF1000081B02C /* Views */,
 				049EB17325FFF1060081B02C /* Controllers */,
+				049EB17D260005C30081B02C /* Helpers */,
 				049EB17025FFF0D40081B02C /* Application */,
 				049EB16D25FFF0730081B02C /* Resources */,
 			);
@@ -132,6 +135,22 @@
 				049EB15A25FFEDB10081B02C /* Main.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		049EB17C260005AE0081B02C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				049EB1822600062C0081B02C /* SCNNode+Aritmetic.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		049EB17D260005C30081B02C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				049EB17C260005AE0081B02C /* Extensions */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				049EB15925FFEDB10081B02C /* ViewController.swift in Sources */,
+				049EB1832600062C0081B02C /* SCNNode+Aritmetic.swift in Sources */,
 				049EB17A25FFFE830081B02C /* Scientist.swift in Sources */,
 				049EB15525FFEDB10081B02C /* AppDelegate.swift in Sources */,
 			);

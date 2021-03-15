@@ -88,4 +88,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         scientists = loadedScientists
         NSLog("Scientist data loaded successfully from JSON.")
     }
+    
+    func textNode(_ str: String, font: UIFont, maxWidth: Int? = nil) -> SCNNode {
+        let text = SCNText(string: str, extrusionDepth: 0.0)
+        text.flatness = 0.01
+        text.font = font
+        
+        if let maxWidth = maxWidth {
+            text.containerFrame = CGRect(origin: .zero,
+                                         size: CGSize(width: maxWidth,
+                                                      height: 500))
+            text.isWrapped = true
+        }
+        
+        let textNode = SCNNode(geometry: text)
+        textNode.scale = SCNVector3(0.002, 0.002, 0.002)
+        
+        return textNode
+    }
 }
