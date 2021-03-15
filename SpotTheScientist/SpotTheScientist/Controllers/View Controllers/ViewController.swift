@@ -123,7 +123,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         }
         
         let textNode = SCNNode(geometry: text)
-        textNode.scale = SCNVector3(0.002, 0.002, 0.002)
+        textNode.scale = SCNVector3(0.02, 0.02, 0.02)
         
         return textNode
     }
