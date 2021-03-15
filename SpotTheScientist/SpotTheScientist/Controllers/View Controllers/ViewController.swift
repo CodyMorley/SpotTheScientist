@@ -54,22 +54,43 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             let scientist = scientists[name] else {
             return nil
         }
-        
         NSLog("Found \(scientist.name).")
-        print(scientist.name)
-        print(scientist.bio)
         
         // Create plane
         let plane = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
                              height: imageAnchor.referenceImage.physicalSize.height)
-        plane.firstMaterial?.diffuse.contents = UIColor.blue
-        
+        plane.firstMaterial?.diffuse.contents = UIColor.clear
         // Set plane inside a node
         let planeNode = SCNNode(geometry: plane)
-        
         // Set plane node inside a second node to get correct rotation in 3D space
         let node = SCNNode()
         node.addChildNode(planeNode)
+        
+        let spacing: Float = 0.005
+        
+        let titleNode = textNode(scientist.name,
+                                 font: UIFont.boldSystemFont(ofSize: 10))
+        titleNode.pivotOnTopLeft()
+        titleNode.position.x += Float(plane.width / 2) + spacing
+        titleNode.position.y += Float(plane.height / 2)
+        planeNode.addChildNode(titleNode)
+        
+        let bioNode = textNode(scientist.bio,
+                               font: UIFont.systemFont(ofSize: 4),
+                               maxWidth: 100)
+        bioNode.pivotOnTopLeft()
+        bioNode.position.x += Float(plane.width / 2) + spacing
+        bioNode.position.y = titleNode.position.y - titleNode.height - spacing
+        planeNode.addChildNode(bioNode)
+        
+        let flag = SCNPlane(width: imageAnchor.referenceImage.physicalSize.width,
+                            height: imageAnchor.referenceImage.physicalSize.width / 8 * 5)
+        flag.firstMaterial?.diffuse.contents = UIImage(named: scientist.country)
+        
+        let flagNode = SCNNode(geometry: flag)
+        flagNode.pivotOnTopCenter()
+        flagNode.position.y -= Float(plane.height / 2) + spacing
+        planeNode.addChildNode(flagNode)
         
         return node
     }
